@@ -38,3 +38,36 @@ with plt.style.context('seaborn'):
 Here is a picture of the plot the above code will produce:
 https://github.com/adamfultz/nationscape-survey-tools/blob/main/discrimination_graphic.png
 
+```python
+import os
+import matplotlib.pyplot as plt
+
+import nationscape_tools as nat
+
+# Assembling list of directories - each week's data is stored in a separate directory named nsYYYYMMDD (year, month, starting day)
+path = r"C:\Users\Adam\Desktop\Python\NatlElectionData\Nationscape-DataRelease_WeeklyMaterials_DTA\combined"
+os.chdir(path)
+dirlist = [d for d in os.listdir(path) if not 
+           os.path.isfile(os.path.join(path, d))]
+# fuse combines the data from each directory into one single DataFrame
+data = nat.fuse(dirlist)
+# compare breaks down how the responses to the question (ex. maternityleave) vary based on the identity of the respondants (ex. religion)
+agg = nat.compare(data, 'maternityleave', 'religion')
+# preprocess transposes data and adds a summation column
+agg = nat.preprocess(agg)
+# Removes columns with a nearly-negligible quantity of responses
+agg = agg.drop(labels = ['Buddhist', 'Hindu', 'Eastern or Greek Orthodox',
+                           'Something else:'])
+agg = agg.rename(index = {
+    'Christian, other than the above' : 'Other Christian',
+    'Nothing in particular' : 'Nothing in Particular'})
+
+with plt.style.context('ggplot'):
+    fig = plt.figure()
+    fig.add_axes()
+    # complot builds stacked bar graph comparing reponses to the question by the respondant's identity
+    nat.complot(fig, agg2)
+    plt.xlabel('Religion')
+    plt.title('Companies Should be Required to Provide 12 Weeks Paid Maternity Leave')
+```
+Here is a picture of the plot the above code will produce:
