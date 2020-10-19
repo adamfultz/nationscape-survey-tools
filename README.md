@@ -35,5 +35,5 @@ with plt.style.context('seaborn'):
     plt.figtext(
         0.17, 0.01, s = 'Data from: Tausanovitch, Chris and Lynn Vavreck. 2020. Democracy Fund + UCLA Nationscape. Retrieved from https://www.voterstudygroup.org/publication/nationscape-data-set.')   
 ```
-![Demo Output] (discrimination_graphic.png)
+![Demo Output] (https://github.com/adamfultz/nationscape-survey-tools/blob/main/discrimination_graphic.png)
 
