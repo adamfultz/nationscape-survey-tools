@@ -8,6 +8,7 @@ The code takes the form of standard library functions largely built using pandas
 #### DEMO
 ```python
 import os
+import matplotlib.pyplot as plt
 
 import nationscape_tools as nat
 
@@ -34,4 +35,5 @@ with plt.style.context('seaborn'):
     plt.figtext(
         0.17, 0.01, s = 'Data from: Tausanovitch, Chris and Lynn Vavreck. 2020. Democracy Fund + UCLA Nationscape. Retrieved from https://www.voterstudygroup.org/publication/nationscape-data-set.')   
 ```
+![Demo Output] (discrimination_graphic.png)
 
