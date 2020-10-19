@@ -71,3 +71,4 @@ with plt.style.context('ggplot'):
     plt.title('Companies Should be Required to Provide 12 Weeks Paid Maternity Leave')
 ```
 Here is a picture of the plot the above code will produce:
+https://github.com/adamfultz/nationscape-survey-tools/blob/main/maternityleave_graphic.png
