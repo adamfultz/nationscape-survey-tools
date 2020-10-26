@@ -1,6 +1,8 @@
 # nationscape-survey-tools
 Read about and download the data here: https://www.voterstudygroup.org/publication/nationscape-data-set 
 
+I wrote an article in medium based on my analysis using this module: https://adamfultz.medium.com/finding-common-ground-in-how-americans-view-abortion-52b10477d55f?source=friends_link&sk=a487c8b88846e53280ac946d6c7963ef
+
 This repository contains Python code for Navigating the Nationscape Datasets, a massive public opinion survey created by a partnership between UCLA political scientists and the Democracy Fund Voter Study Group. 
 
 The code takes the form of standard library functions largely built using pandas and matplotlib that are useful for analyzing, visualizing, and extracting views from the data.
